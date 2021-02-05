@@ -1,0 +1,119 @@
+.container{
+    height:500px;
+    position: relative;
+}
+.center{
+    height: 350px;
+    width: 230px;
+    margin:0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
+    background-color:darkgrey;
+    border-radius:15px;
+    
+}
+.label{
+    color:white;
+    padding: 8px;
+    margin-left: 15px;
+    background-color: darkblue;
+    font-family:'Times New Roman', Times, serif;
+    border-radius: 10px;
+}
+.part{
+    background-color:blue;
+margin-left: 35px;
+}
+.prefix{
+    background-color:blue;
+
+}
+.vehicle{
+    background-color:blue;
+    
+}
+.code{
+    background-color:blue;
+}
+.module{
+background-color:blue;
+
+}
+.submodule{
+    background-color:blue;
+    
+}
+.btn{
+    position: relative;
+    display: inline-block;
+    background-color:blue;
+    margin-left: 75px;
+color: white;
+padding: 8px 10px;
+text-align: center;
+border-radius: 2px;
+cursor: pointer;
+outline: none;
+border-radius: 10px;
+}
+.btn:hover{
+    background-color: darkblue;
+}
+.sele1{
+    background-color: blue;
+    color:white;
+    padding:4px;
+    margin-left: 45px;
+    border:none;
+    border-radius: 5px;
+
+}
+.sele1:hover{
+    background-color:mediumblue;
+}
+.sele2{
+    margin-left: 18px;
+    background-color: blue;
+    color:white;
+    padding:4px;
+    margin-left: 25px;
+    border-radius: 5px;
+
+
+}
+.sele2:hover{
+    background-color:mediumblue;
+}
+.sele3{
+    background-color: blue;
+    color:white;
+    padding:4px;
+    margin-left: 73px;
+    border-radius: 5px;
+}
+.sele3:hover{
+    background-color:mediumblue;
+}
+.sele4{
+    background-color: blue;
+    color:white;
+    padding:4px;
+    margin-left: 55px;
+    border-radius: 5px;
+}
+.sele4:hover{
+    background-color: mediumblue;
+}
+.sele5{
+    background-color: blue;
+    color:white;
+    padding:4px;
+    margin-left: 35px;
+    border-radius: 5px;
+}
+.sele5:hover{
+    background-color:mediumblue;
+}

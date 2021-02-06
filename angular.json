@@ -58,10 +58,29 @@
             }
           }
         },
+        "localenv": {
+          "fileReplacements": [
+            {
+              "replace": "src/environments/environment.ts",
+              "with": "src/environments/environment.localenv.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "extractCss": true,
+          "namedChunks": false,
+          "aot": true,
+          "extractLicenses": true,
+          "vendorChunk": true,
+          "buildOptimizer": true
+        },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "myfirst-app:build"
+            "browserTarget": "myfirst-app:build",
+            "proxyConfig": "./proxy.conf.localenv.json"
+
           },
           "configurations": {
             "production": {
@@ -114,6 +133,10 @@
           "configurations": {
             "production": {
               "devServerTarget": "myfirst-app:serve:production"
+            },
+            "localenv": {
+              "devServerTarget": "myfirst-app:build:localenv",
+              "host": "0.0.0.0"
             }
           }
         }

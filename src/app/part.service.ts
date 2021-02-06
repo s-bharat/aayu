@@ -7,7 +7,7 @@ export class PartService {
 
   constructor(private http:HttpClient) { }
   getData(){
-    let url="'http://www.mocky.io/v2/5ea172973100002d001eeada";
+    let url="http://localhost:4200/partmasterdata";
     return this.http.get(url)
   }
 

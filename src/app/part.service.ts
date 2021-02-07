@@ -5,10 +5,10 @@ import {HttpClient} from '@angular/common/http'
 })
 export class PartService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private httpclient:HttpClient) { }
   getData(){
-    let url="'http://www.mocky.io/v2/5ea172973100002d001eeada";
-    return this.http.get(url)
+  
+    return this.httpclient.get("http://localhost:8081/partmasterdata/")
   }
 
   

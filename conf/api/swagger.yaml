@@ -1,0 +1,387 @@
+swagger: '2.0'
+info:
+  description: 'Part Number Management System. More on: http://example.com/pnms-api'
+  version: 0.0.1-SNAPSHOT
+  title: PNMS
+  termsOfService: 'Please read on https://example.com/terms-of-service'
+  contact:
+    name: Example LLC
+    url: 'http://localhost:8081'
+    email: contact@test.com
+  license:
+    name: Apache License v2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+basePath: /
+tags:
+  - name: partmasterdata
+    description: Part Master data Service
+  - name: parts
+    description: Parts Service
+schemes:
+  - http
+  - https
+paths:
+  /:
+    get:
+      tags:
+        - partmasterdata
+      summary: Get all Master Data
+      description: ''
+      operationId: getMasterData
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/PartMasterDataDTO'
+  '/byPartNumber/{partNumber}':
+    get:
+      tags:
+        - parts
+      summary: Get user by user name
+      description: ''
+      operationId: findByPartNumber
+      parameters:
+        - name: partNumber
+          in: path
+          description: 'The name that needs to be fetched. Use user1 for testing. '
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/PartDTO'
+  /createNewPart:
+    post:
+      tags:
+        - parts
+      summary: Create New Part by providing required object
+      description: ''
+      operationId: createNewPart
+      parameters:
+        - in: body
+          name: body
+          description: List of user object
+          required: true
+          schema:
+            $ref: '#/definitions/PartDTO'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ResponseEntityObject'
+  '/getPartHistory/{partNumber}':
+    get:
+      tags:
+        - parts
+      summary: Get Parts History
+      description: ''
+      operationId: getPartHistory
+      parameters:
+        - name: partNumber
+          in: path
+          description: 'The Number for which History needs to be fetched '
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/PartHistory'
+  /save:
+    post:
+      tags:
+        - partmasterdata
+      operationId: saveOrUpdatePartMasterData
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/PartMasterDataDTO'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ResponseEntityObject'
+  /updatePart:
+    put:
+      tags:
+        - parts
+      summary: Update existing Part by providing list
+      description: ''
+      operationId: updatePart
+      parameters:
+        - in: body
+          name: body
+          description: List of user object
+          required: true
+          schema:
+            $ref: '#/definitions/PartDTO'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ResponseEntityObject'
+definitions:
+  PartDTO:
+    type: object
+    properties:
+      id:
+        type: string
+      partName:
+        type: string
+      partNumber:
+        type: string
+      partNumberFields:
+        $ref: '#/definitions/PartNumberFields'
+      partNameFields:
+        $ref: '#/definitions/PartNameFields'
+      partStatus:
+        type: string
+      createdDate:
+        type: string
+        format: date-time
+      lastUpdatedDate:
+        type: string
+        format: date-time
+      user:
+        $ref: '#/definitions/User'
+  PartHistory:
+    type: object
+    properties:
+      id:
+        type: string
+      partName:
+        type: string
+      partNumber:
+        type: string
+      updatedOn:
+        type: string
+        format: date-time
+      user:
+        $ref: '#/definitions/User'
+      version:
+        $ref: '#/definitions/Version'
+      action:
+        type: string
+      partStatus:
+        type: string
+  PartMasterDataDTO:
+    type: object
+    properties:
+      id:
+        type: string
+      partMasterDataType:
+        type: string
+      partMasterDataTypeValue:
+        type: string
+      partMasterDataTypeCode:
+        type: string
+  PartNameFields:
+    type: object
+    properties:
+      inputField1:
+        type: string
+      inputField2:
+        type: string
+      inputField3:
+        type: string
+      inputField4:
+        type: string
+  PartNumberFields:
+    type: object
+    properties:
+      partPartmasterdata:
+        type: string
+      vehicleType:
+        type: string
+      vehicleCode:
+        type: string
+      vehicleModule:
+        type: string
+  ResponseEntity:
+    type: object
+    properties:
+      headers:
+        type: object
+        additionalProperties:
+          type: array
+          items:
+            type: string
+      body:
+        type: object
+      statusCode:
+        type: string
+        enum:
+          - CONTINUE
+          - SWITCHING_PROTOCOLS
+          - PROCESSING
+          - CHECKPOINT
+          - OK
+          - CREATED
+          - ACCEPTED
+          - NON_AUTHORITATIVE_INFORMATION
+          - NO_CONTENT
+          - RESET_CONTENT
+          - PARTIAL_CONTENT
+          - MULTI_STATUS
+          - ALREADY_REPORTED
+          - IM_USED
+          - MULTIPLE_CHOICES
+          - MOVED_PERMANENTLY
+          - FOUND
+          - MOVED_TEMPORARILY
+          - SEE_OTHER
+          - NOT_MODIFIED
+          - USE_PROXY
+          - TEMPORARY_REDIRECT
+          - PERMANENT_REDIRECT
+          - BAD_REQUEST
+          - UNAUTHORIZED
+          - PAYMENT_REQUIRED
+          - FORBIDDEN
+          - NOT_FOUND
+          - METHOD_NOT_ALLOWED
+          - NOT_ACCEPTABLE
+          - PROXY_AUTHENTICATION_REQUIRED
+          - REQUEST_TIMEOUT
+          - CONFLICT
+          - GONE
+          - LENGTH_REQUIRED
+          - PRECONDITION_FAILED
+          - PAYLOAD_TOO_LARGE
+          - REQUEST_ENTITY_TOO_LARGE
+          - URI_TOO_LONG
+          - REQUEST_URI_TOO_LONG
+          - UNSUPPORTED_MEDIA_TYPE
+          - REQUESTED_RANGE_NOT_SATISFIABLE
+          - EXPECTATION_FAILED
+          - I_AM_A_TEAPOT
+          - INSUFFICIENT_SPACE_ON_RESOURCE
+          - METHOD_FAILURE
+          - DESTINATION_LOCKED
+          - UNPROCESSABLE_ENTITY
+          - LOCKED
+          - FAILED_DEPENDENCY
+          - UPGRADE_REQUIRED
+          - PRECONDITION_REQUIRED
+          - TOO_MANY_REQUESTS
+          - REQUEST_HEADER_FIELDS_TOO_LARGE
+          - UNAVAILABLE_FOR_LEGAL_REASONS
+          - INTERNAL_SERVER_ERROR
+          - NOT_IMPLEMENTED
+          - BAD_GATEWAY
+          - SERVICE_UNAVAILABLE
+          - GATEWAY_TIMEOUT
+          - HTTP_VERSION_NOT_SUPPORTED
+          - VARIANT_ALSO_NEGOTIATES
+          - INSUFFICIENT_STORAGE
+          - LOOP_DETECTED
+          - BANDWIDTH_LIMIT_EXCEEDED
+          - NOT_EXTENDED
+          - NETWORK_AUTHENTICATION_REQUIRED
+      statusCodeValue:
+        type: integer
+        format: int32
+  ResponseEntityObject:
+    type: object
+    properties:
+      headers:
+        type: object
+        additionalProperties:
+          type: array
+          items:
+            type: string
+      body:
+        type: object
+      statusCode:
+        type: string
+        enum:
+          - CONTINUE
+          - SWITCHING_PROTOCOLS
+          - PROCESSING
+          - CHECKPOINT
+          - OK
+          - CREATED
+          - ACCEPTED
+          - NON_AUTHORITATIVE_INFORMATION
+          - NO_CONTENT
+          - RESET_CONTENT
+          - PARTIAL_CONTENT
+          - MULTI_STATUS
+          - ALREADY_REPORTED
+          - IM_USED
+          - MULTIPLE_CHOICES
+          - MOVED_PERMANENTLY
+          - FOUND
+          - MOVED_TEMPORARILY
+          - SEE_OTHER
+          - NOT_MODIFIED
+          - USE_PROXY
+          - TEMPORARY_REDIRECT
+          - PERMANENT_REDIRECT
+          - BAD_REQUEST
+          - UNAUTHORIZED
+          - PAYMENT_REQUIRED
+          - FORBIDDEN
+          - NOT_FOUND
+          - METHOD_NOT_ALLOWED
+          - NOT_ACCEPTABLE
+          - PROXY_AUTHENTICATION_REQUIRED
+          - REQUEST_TIMEOUT
+          - CONFLICT
+          - GONE
+          - LENGTH_REQUIRED
+          - PRECONDITION_FAILED
+          - PAYLOAD_TOO_LARGE
+          - REQUEST_ENTITY_TOO_LARGE
+          - URI_TOO_LONG
+          - REQUEST_URI_TOO_LONG
+          - UNSUPPORTED_MEDIA_TYPE
+          - REQUESTED_RANGE_NOT_SATISFIABLE
+          - EXPECTATION_FAILED
+          - I_AM_A_TEAPOT
+          - INSUFFICIENT_SPACE_ON_RESOURCE
+          - METHOD_FAILURE
+          - DESTINATION_LOCKED
+          - UNPROCESSABLE_ENTITY
+          - LOCKED
+          - FAILED_DEPENDENCY
+          - UPGRADE_REQUIRED
+          - PRECONDITION_REQUIRED
+          - TOO_MANY_REQUESTS
+          - REQUEST_HEADER_FIELDS_TOO_LARGE
+          - UNAVAILABLE_FOR_LEGAL_REASONS
+          - INTERNAL_SERVER_ERROR
+          - NOT_IMPLEMENTED
+          - BAD_GATEWAY
+          - SERVICE_UNAVAILABLE
+          - GATEWAY_TIMEOUT
+          - HTTP_VERSION_NOT_SUPPORTED
+          - VARIANT_ALSO_NEGOTIATES
+          - INSUFFICIENT_STORAGE
+          - LOOP_DETECTED
+          - BANDWIDTH_LIMIT_EXCEEDED
+          - NOT_EXTENDED
+          - NETWORK_AUTHENTICATION_REQUIRED
+      statusCodeValue:
+        type: integer
+        format: int32
+  User:
+    type: object
+    properties:
+      userID:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+      email:
+        type: string
+  Version:
+    type: object

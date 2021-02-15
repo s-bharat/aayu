@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {PartService} from './part.service'
+//import {PartService} from './part.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,10 @@ import {PartService} from './part.service'
 export class AppComponent {
   title = 'angular site';
 
-  constructor(private part:PartService)
-  {
-    this.part.getData().subscribe(data=>{
-      console.warn(data)
-    })
-  }
+  //constructor(private part:PartService)
+  //{
+    //this.part.getData().subscribe(data=>{
+    //  console.warn(data)
+    //})
+  //}
 }

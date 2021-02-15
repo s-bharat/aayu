@@ -13,7 +13,7 @@
  */
 
 export interface PartNumberFields {
-  partPrefix?: string;
+  partPartmasterdata?: string;
   vehicleType?: string;
   vehicleCode?: string;
   vehicleModule?: string;

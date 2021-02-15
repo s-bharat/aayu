@@ -268,7 +268,7 @@
     "PartNumberFields" : {
       "type" : "object",
       "properties" : {
-        "partPrefix" : {
+        "partPartmasterdata" : {
           "type" : "string"
         },
         "vehicleType" : {

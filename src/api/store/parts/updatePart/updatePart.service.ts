@@ -28,7 +28,7 @@ export class UpdatePartFormService {
         partName: new FormControl(undefined, []),
         partNumber: new FormControl(undefined, []),
         partNumberFields: new FormGroup({
-          partPrefix: new FormControl(undefined, []),
+          partPartmasterdata: new FormControl(undefined, []),
           vehicleType: new FormControl(undefined, []),
           vehicleCode: new FormControl(undefined, []),
           vehicleModule: new FormControl(undefined, []),

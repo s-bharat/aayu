@@ -1,30 +1,80 @@
 
-<h1>angular simple first page</h1>
-<div class="container">
-    <div class="center"><br>
-<span class="label part">part number generator</span><br>
-<br><br>
-<span class="label prefix">preprefix</span>
-<select class="sele1">
-    <option>select</option>
-</select><br><br>
-<span class="label vehicle">vehicle type</span>
-<select class="sele2">
-    <option>select</option>
-</select><br><br>
-<span class="label code">code</span>
-<select class="sele3">
-    <option>select</option>
-</select><br><br>
-<span class="label module">module</span>
-<select class="sele4">
-    <option>select</option>
-</select>
-<br><br>
-<span class="label submodule">submodule</span>
-<select class="sele5">
-    <option>select</option>
-    </select>
-    <br><br>
-    <button class="btn">generate</button>
-</div></div>
+<p-splitter [style]="{'height': '750px'}" [panelSizes]="[20,80]" [minSizes]="[10,0]" styleClass="p-mb-5">
+    <ng-template>
+        <div class="p-col p-d-flex p-ai-center p-jc-center">
+            <p-tabView>
+                <p-tabPanel header="Create Part">
+                    <p-panel header="Enter Part Info" [toggleable]="true">
+                        <app-createpart></app-createpart>
+                    </p-panel>
+                </p-tabPanel>
+            </p-tabView>           
+        </div>
+    </ng-template>
+    <ng-template>
+        <p-splitter layout="horizontal" [panelSizes]="[50,50]">
+            <ng-template>
+                <p-splitter layout="vertical" [panelSizes]="[10,80]">
+                    <ng-template>
+                        <div class="p-col p-d-flex p-ai-center p-jc-center">
+                            Search Bar!!
+                        </div>
+                    </ng-template>
+                    <ng-template>
+                        <div class="p-col p-d-flex p-ai-center p-jc-center">
+                            <p-tabView>
+                                <p-tabPanel header="Search Result">
+                                    <br>| Part Numner | Part Name      | Status |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+
+                                </p-tabPanel>
+                                <p-tabPanel header="View All Parts">
+                                    <br>| Part Numner | Part Name      | Status |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                    <br>| A123456789  | Test Part L 1  | Draft  |
+                                </p-tabPanel>
+                            </p-tabView>  
+                        </div>
+                    </ng-template>
+                </p-splitter>
+            </ng-template>
+            <ng-template>
+                <div class="p-col p-d-flex p-ai-center p-jc-center">
+                    <p-panel header="Part Detail" [toggleable]="true">
+                        Part Number: A1234567890<br><br>
+                        Part Name  : Test L Part<br><br>
+                        Status     :  Draft<br><br>
+                        Is Lockerd :  No  
+                    </p-panel>
+                    <p-panel header="Part History" [toggleable]="true">
+                        |Part Name | Status | Action | Last Updated on| Last updated by|<br><br>
+                        |Part Name | Status | Action | Last Updated on| Last updated by|<br><br>
+                        |Part Name | Status | Action | Last Updated on| Last updated by|<br><br>
+                        |Part Name | Status | Action | Last Updated on| Last updated by|<br><br>
+                        |Part Name | Status | Action | Last Updated on| Last updated by|<br><br>
+                        |Part Name | Status | Action | Last Updated on| Last updated by|<br><br>
+
+                    </p-panel>
+                </div>
+            </ng-template>
+        </p-splitter>
+    </ng-template>
+</p-splitter>

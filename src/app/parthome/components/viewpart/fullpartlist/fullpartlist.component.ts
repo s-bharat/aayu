@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
-
+import { FullpartlistService } from 'src/app/partshome/service/viewpart/fullpartlist.service';
+import { Fullpartlistobj } from 'src/app/partshome/service/viewpart/fullpartlistobj';
 
 @Component({
   selector: 'fullpartlist',
@@ -8,10 +8,12 @@ import { from } from 'rxjs';
   styleUrls: ['./fullpartlist.component.css']
 })
 export class FullpartlistComponent implements OnInit {
+data: Fullpartlistobj[];
+  constructor(private fullpartlistservice: FullpartlistService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    return this.fullpartlistservice.getPartmasterdata()
+    .subscribe(data =>this.data = data);
 
   }
 

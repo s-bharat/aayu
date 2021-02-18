@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PartnameService } from  '../../../service/partname/partname.service';
+import { PartnameService } from  '../../../service/part/partname.service';
 
 
 

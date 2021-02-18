@@ -26,6 +26,30 @@
             <label for="dropdown">Module</label>
         </span>
     </div>
+    <div class="p-field p-col-12 p-md-4">
+        <span class="p-float-label">
+            <p-dropdown [style]="{'width':'350px','margin-top':'35px'}" inputId="Assembly" [autoDisplayFirst]="false" [options]="partmasterdataAssembly" [(ngModel)]="selectedPartmasterdataAssembly" optionLabel="partMasterDataTypeValue"></p-dropdown>
+            <label for="dropdown">Assembly</label>
+        </span>
+    </div>
+    <div class="p-field p-col-12 p-md-4">
+        <span class="p-float-label">
+            <p-dropdown [style]="{'width':'350px','margin-top':'35px'}" inputId="UpDown" [autoDisplayFirst]="false" [options]="partmasterdataUpDown" [(ngModel)]="selectedPartmasterdataUpDown" optionLabel="partMasterDataTypeValue"></p-dropdown>
+            <label for="dropdown">Up/Down</label>
+        </span>
+    </div>
+    <div class="p-field p-col-12 p-md-4">
+        <span class="p-float-label">
+            <p-dropdown [style]="{'width':'350px','margin-top':'35px'}" inputId="LeftRight" [autoDisplayFirst]="false" [options]="partmasterdataLeftRight" [(ngModel)]="selectedPartmasterdataLeftRight" optionLabel="partMasterDataTypeValue"></p-dropdown>
+            <label for="dropdown">Left/Right</label>
+        </span>
+    </div>
+    <div class="p-field p-col-12 p-md-4">
+        <span class="p-float-label">
+            <p-dropdown [style]="{'width':'350px','margin-top':'35px'}" inputId="FrontRear" [autoDisplayFirst]="false" [options]="partmasterdataFrontRear" [(ngModel)]="selectedPartmasterdataFrontRear" optionLabel="partMasterDataTypeValue"></p-dropdown>
+            <label for="dropdown">Front/Rear</label>
+        </span>
+    </div>
 
 </div>
 </div>

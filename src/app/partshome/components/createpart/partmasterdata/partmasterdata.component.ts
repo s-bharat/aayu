@@ -25,6 +25,18 @@ export class PartmasterdataComponent implements OnInit{
   partmasterdataModules: PartmasterdataObj[];
   selectedPartmasterdataModules: PartmasterdataObj;
 
+  partmasterdataAssembly: PartmasterdataObj[];
+  selectedPartmasterdataAssembly: PartmasterdataObj;
+
+  partmasterdataUpDown: PartmasterdataObj[];
+  selectedPartmasterdataUpDown: PartmasterdataObj;
+
+  partmasterdataLeftRight: PartmasterdataObj[];
+  selectedPartmasterdataLeftRight: PartmasterdataObj;
+
+  partmasterdataFrontRear: PartmasterdataObj[];
+  selectedPartmasterdataFrontRear: PartmasterdataObj;
+
   constructor(private partmasterdataService: PartmasterdataService) { };
 
 
@@ -44,7 +56,14 @@ export class PartmasterdataComponent implements OnInit{
             this.partmasterdatapVehicleCode=fetchedPartmasterdataList.filter(item => item.partMasterDataType === 'Vehicle Code');
     
             this.partmasterdataModules=fetchedPartmasterdataList.filter(item => item.partMasterDataType === 'Module');
-    
+
+            this.partmasterdataAssembly=fetchedPartmasterdataList.filter(item => item.partMasterDataType === 'Assembly');
+
+            this.partmasterdataUpDown=fetchedPartmasterdataList.filter(item => item.partMasterDataType === 'UpDown');
+
+            this.partmasterdataLeftRight=fetchedPartmasterdataList.filter(item => item.partMasterDataType === 'LeftRight');
+
+            this.partmasterdataFrontRear=fetchedPartmasterdataList.filter(item => item.partMasterDataType === 'FrontRear');
         }
     });
   //  this.partmasterdataService.getPartmasterdata().subscribe(fetchedPartmasterdataList=>{console.log("Test1:", fetchedPartmasterdataList);this.partmasterdataList=fetchedPartmasterdataList});

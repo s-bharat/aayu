@@ -10,10 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { PartnameComponent } from './components/createpart/partname/partname.component';
 import {InputTextModule} from 'primeng/inputtext';
+import { FullpartslistComponent } from './components/viewpart/fullpartslist/fullpartslist.component';
 
 @NgModule({
-  exports: [CreatepartComponent,PartmasterdataComponent],
-  declarations: [CreatepartComponent, PartmasterdataComponent, PartnameComponent],
+  exports: [CreatepartComponent,PartmasterdataComponent,FullpartslistComponent],
+  declarations: [CreatepartComponent, PartmasterdataComponent, PartnameComponent, FullpartslistComponent],
   imports: [
     CommonModule,
     ButtonModule,

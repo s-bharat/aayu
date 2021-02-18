@@ -9,6 +9,7 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import {InputTextModule} from 'primeng/inputtext';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   exports: [CreatepartComponent,PartmasterdataComponent],
@@ -21,7 +22,8 @@ import {InputTextModule} from 'primeng/inputtext';
     BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
-    InputTextModule
+    InputTextModule,
+    TableModule
   ],
   providers: []
 

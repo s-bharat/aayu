@@ -36,7 +36,6 @@ export class PartmasterdataComponent implements OnInit{
 
   partmasterdataFrontRear: PartmasterdataObj[];
   selectedPartmasterdataFrontRear: PartmasterdataObj;
-
   constructor(private partmasterdataService: PartmasterdataService) { };
 
 

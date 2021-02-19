@@ -10,10 +10,19 @@ import { Fullpartlistobj } from 'src/app/partshome/service/part/fullpartlist/ful
 })
 export class FullpartlistComponent implements OnInit {
 data: Fullpartlistobj[];
+scrollableCols: any[];
   constructor(private fullpartlistservice: FullpartlistService) { }
   ngOnInit() {
     return this.fullpartlistservice.getPartmasterdata()
     .subscribe(data =>this.data = data);
+    
+    this.scrollableCols = [
+      { field: 'id', header: 'Id' },
+      { field: 'partMasterDataType', header: 'partMasterDataType' },
+      { field: 'partMasterDataTypeValue', header: 'partMasterDataTypeValue' },
+      { field: 'partMasterDataTypeCode', header: 'partMasterDataTypeCode' },
+  
+  ];
 
   }
 

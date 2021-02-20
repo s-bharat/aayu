@@ -10,10 +10,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import {InputTextModule} from 'primeng/inputtext';
 import {TableModule} from 'primeng/table';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import { ParthistoryComponent } from './components/part/parthistory/parthistory.component';
 
 @NgModule({
-  exports: [CreatepartComponent,PartmasterdataComponent],
-  declarations: [CreatepartComponent, PartmasterdataComponent ],
+  exports: [CreatepartComponent,PartmasterdataComponent,ParthistoryComponent],
+  declarations: [CreatepartComponent, PartmasterdataComponent, ParthistoryComponent ],
   imports: [
     CommonModule,
     ButtonModule,
@@ -23,7 +25,9 @@ import {TableModule} from 'primeng/table';
     BrowserModule,
     HttpClientModule,
     InputTextModule,
-    TableModule
+    TableModule,
+    AutoCompleteModule,
+    ParthistoryComponent
   ],
   providers: []
 

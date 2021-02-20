@@ -40,8 +40,6 @@ export class PartmasterdataComponent implements OnInit{
   partmasterdataPartName: string[];
   selectedPartmasterdataPartName: string;
 
-  
-
   constructor(private partmasterdataService: PartmasterdataService) { };
 
 

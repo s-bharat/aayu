@@ -6,7 +6,8 @@ import { PartshomeModule } from './partshome/partshome.module';
 import {PanelModule} from 'primeng/panel';
 import {TabViewModule} from 'primeng/tabview';
 import {SplitterModule} from 'primeng/splitter';
-import { FullpartlistComponent } from './partshome/components/fullpartlist/fullpartlist.component';
+import { FullpartlistComponent } from './partshome/components/part/fullpartlist/fullpartlist.component';
+
 @NgModule({
   declarations: [
     AppComponent,

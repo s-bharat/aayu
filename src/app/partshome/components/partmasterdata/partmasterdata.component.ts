@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PartmasterdataObj} from '../../../service/partmasterdata/partmasterdataobj';
-import {PartmasterdataService} from '../../../service/partmasterdata/partmasterdata.service';
+import {PartmasterdataObj} from '../../service/partmasterdata/partmasterdataobj';
+import {PartmasterdataService} from '../../service/partmasterdata/partmasterdata.service';
 
 @Component({
   selector: 'app-partmasterdata',

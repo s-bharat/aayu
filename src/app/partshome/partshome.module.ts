@@ -12,6 +12,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {TableModule} from 'primeng/table';
 import { ParthistoryComponent } from './components/part/parthistory/parthistory.component';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
+import {AutoCompleteModule} from 'primeng/autocomplete';
 
 @NgModule({
   exports: [CreatepartComponent,PartmasterdataComponent,ParthistoryComponent],

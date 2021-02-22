@@ -22,44 +22,41 @@
                     </ng-template>
                     <ng-template>
                         <div class="p-col p-d-flex p-ai-center p-jc-center">
-                            <p-tabView>
-                                <p-tabPanel header="Search Result">
-                                    <br>| Part Numner | Part Name      | Status |
-                                    <br>| A123456789  | Test Part L 1  | Draft  |
-                                    <br>| A123456789  | Test Part L 1  | Draft  |
-                                    <br>| A123456789  | Test Part L 1  | Draft  |
-                                    <br>| A123456789  | Test Part L 1  | Draft  |
-                                    <br>| A123456789  | Test Part L 1  | Draft  |
-                                    <br>| A123456789  | Test Part L 1  | Draft  |
-                                    <br>| A123456789  | Test Part L 1  | Draft  |
-
-                                </p-tabPanel>
-                                <p-tabPanel header="View All Parts">
-                                    <fullpartlist></fullpartlist>
-                                </p-tabPanel>
-                            </p-tabView>  
+                            <p-panel header="Search Result" [toggleable]="true">
+                                <p-tabView>
+                                    <p-tabPanel header="Search Result">
+                                        <br>| Part Numner | Part Name      | Status |
+                                        <br>| A123456789  | Test Part L 1  | Draft  |
+                                        <br>| A123456789  | Test Part L 1  | Draft  |
+                                        <br>| A123456789  | Test Part L 1  | Draft  |
+                                        <br>| A123456789  | Test Part L 1  | Draft  |
+                                        <br>| A123456789  | Test Part L 1  | Draft  |
+                                        <br>| A123456789  | Test Part L 1  | Draft  |
+                                        <br>| A123456789  | Test Part L 1  | Draft  |
+                                    </p-tabPanel>
+                                    <p-tabPanel header="View All Parts">
+                                        <p-scrollPanel [style]="{width: '100%', height: '200px'}">
+                                            <fullpartlist></fullpartlist>
+                                        </p-scrollPanel>
+                                    </p-tabPanel>
+                                </p-tabView>  
+                            </p-panel>
+                        </div>
+                    </ng-template>
+                    <ng-template>
+                        <div class="p-col p-d-flex p-ai-center p-jc-center">
+                            <p-panel header="Part Detail" [toggleable]="true">
+                                Part Number: A1234567890<br><br>
+                                Part Name  : Test L Part<br><br>
+                                Status     :  Draft<br><br>
+                                Is Locked  :  No  
+                            </p-panel>
+                            <p-panel header="Part History" [toggleable]="true">
+                                <parthistory></parthistory>
+                            </p-panel>
                         </div>
                     </ng-template>
                 </p-splitter>
-            </ng-template>
-            <ng-template>
-                <div class="p-col p-d-flex p-ai-center p-jc-center">
-                    <p-panel header="Part Detail" [toggleable]="true">
-                        Part Number: A1234567890<br><br>
-                        Part Name  : Test L Part<br><br>
-                        Status     :  Draft<br><br>
-                        Is Locked  :  No  
-                    </p-panel>
-                    <p-panel header="Part History" [toggleable]="true">
-                        |Part Name | Status | Action | Last Updated on| Last updated by|<br><br>
-                        |Part Name | Status | Action | Last Updated on| Last updated by|<br><br>
-                        |Part Name | Status | Action | Last Updated on| Last updated by|<br><br>
-                        |Part Name | Status | Action | Last Updated on| Last updated by|<br><br>
-                        |Part Name | Status | Action | Last Updated on| Last updated by|<br><br>
-                        |Part Name | Status | Action | Last Updated on| Last updated by|<br><br>
-
-                    </p-panel>
-                </div>
             </ng-template>
         </p-splitter>
     </ng-template>

@@ -2,9 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {PartmasterdataObj} from './partmasterdataobj';
 import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
-
-
 
 @Injectable({
   providedIn: 'root'

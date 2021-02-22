@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import {InputTextModule} from 'primeng/inputtext';
 import {TableModule} from 'primeng/table';
+import {AutoCompleteModule} from 'primeng/autocomplete';
 import { ParthistoryComponent } from './components/part/parthistory/parthistory.component';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
 
@@ -26,7 +27,8 @@ import {ScrollPanelModule} from 'primeng/scrollpanel';
     HttpClientModule,
     InputTextModule,
     TableModule,
-    ScrollPanelModule
+    ScrollPanelModule,
+    AutoCompleteModule
   ],
   providers: []
 

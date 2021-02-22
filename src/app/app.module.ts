@@ -7,7 +7,6 @@ import {PanelModule} from 'primeng/panel';
 import {TabViewModule} from 'primeng/tabview';
 import {SplitterModule} from 'primeng/splitter';
 import { FullpartlistComponent } from './partshome/components/part/fullpartlist/fullpartlist.component';
-import {ScrollPanelModule} from 'primeng/scrollpanel';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import {ScrollPanelModule} from 'primeng/scrollpanel';
     PartshomeModule,
     PanelModule,
     TabViewModule,
-    SplitterModule,
-    ScrollPanelModule
+    SplitterModule
   ],
   providers: [],
   bootstrap: [AppComponent],

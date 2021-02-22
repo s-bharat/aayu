@@ -1,0 +1,20 @@
+<p-table [value]="partHistory">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Version</th>
+            <th>Action</th>
+            <th>Status</th>
+            <th>User Id</th>
+            <th>Date</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-partHistory>
+        <tr>
+            <td>{{partHistory.version}}</td>
+            <td>{{partHistory.action}}</td>
+            <td>{{partHistory.partStatus}}</td>
+            <td>{{partHistory.userId}}</td>
+            <td>{{partHistory.updatedOn}}</td>
+        </tr>
+    </ng-template>
+</p-table>

@@ -1,4 +1,4 @@
-export interface Part {
+export interface PartObj {
   
     id: string,
     partname: string,

@@ -26,7 +26,8 @@ import {ScrollPanelModule} from 'primeng/scrollpanel';
     HttpClientModule,
     InputTextModule,
     TableModule,
-    ScrollPanelModule
+    ScrollPanelModule,
+    AutoCompleteModule
   ],
   providers: []
 

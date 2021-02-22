@@ -8,7 +8,6 @@ import {TabViewModule} from 'primeng/tabview';
 import {SplitterModule} from 'primeng/splitter';
 import { FullpartlistComponent } from './partshome/components/part/fullpartlist/fullpartlist.component';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
-
 @NgModule({
   declarations: [
     AppComponent,

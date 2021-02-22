@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FullpartlistService } from './fullpartlist.service';
+import { ParthistoryService } from './parthistory.service';
 
-describe('FullpartlistService', () => {
-  let service: FullpartlistService;
+describe('ParthistoryService', () => {
+  let service: ParthistoryService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(FullpartlistService);
+    service = TestBed.inject(ParthistoryService);
   });
 
   it('should be created', () => {

@@ -1,24 +1,18 @@
 <div class="container">
-    <h2>Basic Table</h2>           
-    <table class="table">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>partMasterDataType</th>
-          <th>partMasterDataTypeValue</th>
-          <th>partMasterDataTypeCode</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let items of data">
-          <td>{{items.id}}</td>
-          <td>{{items.partMasterDataType}}</td>
-          <td>{{items.partMasterDataTypeValue}}</td>
-          <td>{{items.partMasterDataTypeCode}}</td>
-          
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
+  <h2>Basic Table</h2>           
+  <table class="table">
+    <thead>
+      <tr>
+        <th>partnumberFields</th>
         
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let items of dat">
+        <td>{{items.partPrefix}}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+

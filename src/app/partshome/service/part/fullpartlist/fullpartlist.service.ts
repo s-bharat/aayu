@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { Fullpartlistobj } from './fullpartlistobj';
+import { PartnumberObj } from './partnumberObj';
 
 
 @Injectable({
@@ -9,10 +9,10 @@ import { Fullpartlistobj } from './fullpartlistobj';
 })
 export class FullpartlistService {
 
-  private partmasterdataUrl = "http://localhost:4200/partmasterdata";  // URL to web api
+  private partmasterdataUrl = "http://localhost:4200/parts";  // URL to web api
 
   constructor(private http:HttpClient) { }
-  getPartmasterdata(): Observable<Fullpartlistobj[]>{
-    return this.http.get<Fullpartlistobj[]>(this.partmasterdataUrl)
+  getPartsdata(): Observable<PartnumberObj[]>{
+    return this.http.get<PartnumberObj[]>(this.partmasterdataUrl)
   }
 }

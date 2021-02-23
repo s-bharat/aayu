@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FullpartlistService } from 'src/app/partshome/service/part/fullpartlist/fullpartlist.service';
-
-import { Fullpartlistobj } from 'src/app/partshome/service/part/fullpartlist/fullpartlistobj';
+import { PartnumberObj } from 'src/app/partshome/service/part/fullpartlist/partnumberobj';
 
 @Component({
   selector: 'fullpartlist',
@@ -9,20 +8,14 @@ import { Fullpartlistobj } from 'src/app/partshome/service/part/fullpartlist/ful
   styleUrls: ['./fullpartlist.component.css']
 })
 export class FullpartlistComponent implements OnInit {
-data: Fullpartlistobj[];
-scrollableCols: any[];
+parts: PartnumberObj[];
+
   constructor(private fullpartlistservice: FullpartlistService) { }
   ngOnInit() {
-    return this.fullpartlistservice.getPartmasterdata()
-    .subscribe(data =>this.data = data);
+    return this.fullpartlistservice.getPartsdata()
+    .subscribe(data =>this.parts = data);
     
-    this.scrollableCols = [
-      { field: 'id', header: 'Id' },
-      { field: 'partMasterDataType', header: 'partMasterDataType' },
-      { field: 'partMasterDataTypeValue', header: 'partMasterDataTypeValue' },
-      { field: 'partMasterDataTypeCode', header: 'partMasterDataTypeCode' },
-  
-  ];
+    
 
   }
 

@@ -2,27 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { FullpartlistService } from 'src/app/partshome/service/part/fullpartlist/fullpartlist.service';
 
 import { Fullpartlistobj } from 'src/app/partshome/service/part/fullpartlist/fullpartlistobj';
-
+import {ParthistoryService} from '../../../service/part/parthistory/parthistory.service'
+import {PartHistoryObj} from '../../../service/part/parthistory/parthistoryObj';
 @Component({
   selector: 'fullpartlist',
   templateUrl: './fullpartlist.component.html',
   styleUrls: ['./fullpartlist.component.css']
 })
 export class FullpartlistComponent implements OnInit {
-data: Fullpartlistobj[];
-scrollableCols: any[];
-  constructor(private fullpartlistservice: FullpartlistService) { }
+  constructor(private parthistoryService: ParthistoryService) { };
+
+  partHistory: PartHistoryObj[];
   ngOnInit() {
-    return this.fullpartlistservice.getPartmasterdata()
-    .subscribe(data =>this.data = data);
-    
-    this.scrollableCols = [
-      { field: 'id', header: 'Id' },
-      { field: 'partMasterDataType', header: 'partMasterDataType' },
-      { field: 'partMasterDataTypeValue', header: 'partMasterDataTypeValue' },
-      { field: 'partMasterDataTypeCode', header: 'partMasterDataTypeCode' },
-  
-  ];
+    this.getParthistory();
+    //this.parthistoryService.getParthistory().then(data => this.products = data);
+
+  }
+
+  getParthistory() {
+    return this.parthistoryService.getParthistory().subscribe(fetchedPartHistory=>{this.partHistory=fetchedPartHistory});
+  //  this.partmasterdataService.getPartmasterdata().subscribe(fetchedPartmasterdataList=>{console.log("Test1:", fetchedPartmasterdataList);this.partmasterdataList=fetchedPartmasterdataList});
 
   }
 

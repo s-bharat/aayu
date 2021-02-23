@@ -1,24 +1,20 @@
-<div class="container">
-    <h2>Basic Table</h2>           
-    <table class="table">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>partMasterDataType</th>
-          <th>partMasterDataTypeValue</th>
-          <th>partMasterDataTypeCode</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let items of data">
-          <td>{{items.id}}</td>
-          <td>{{items.partMasterDataType}}</td>
-          <td>{{items.partMasterDataTypeValue}}</td>
-          <td>{{items.partMasterDataTypeCode}}</td>
-          
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
-        
+<p-table [value]="partHistory">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Version</th>
+          <th>Action</th>
+          <th>Status</th>
+          <th>User Id</th>
+          <th>Date</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-partHistory>
+      <tr>
+          <td>{{partHistory.version}}</td>
+          <td>{{partHistory.action}}</td>
+          <td>{{partHistory.partStatus}}</td>
+          <td>{{partHistory.userId}}</td>
+          <td>{{partHistory.updatedOn}}</td>
+      </tr>
+  </ng-template>
+</p-table>

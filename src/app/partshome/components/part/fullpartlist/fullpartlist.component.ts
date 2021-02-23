@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FullpartlistService } from 'src/app/partshome/service/part/fullpartlist/fullpartlist.service
-import { Fullpartlistobj } from 'src/app/partshome/service/part/fullpartlist/fullpartlistobj';
 import {ParthistoryService} from '../../../service/part/parthistory/parthistory.service'
 import {PartHistoryObj} from '../../../service/part/parthistory/parthistoryObj';
 @Component({

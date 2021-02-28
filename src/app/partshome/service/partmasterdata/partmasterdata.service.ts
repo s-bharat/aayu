@@ -14,6 +14,8 @@ export class PartmasterdataService {
   getPartmasterdata(): Observable<PartmasterdataObj[]>{
     return this.http.get<PartmasterdataObj[]>(this.partmasterdataUrl)
   }
-
+  searchPartmasterdataPartName(searchValue: string): Observable<PartmasterdataObj[]>{
+    return this.http.get<PartmasterdataObj[]>((this.partmasterdataUrl)+"/search/?searchpartMasterDataType=partName&searchpartMasterDataTypeValue="+searchValue)
+  }
 
 }

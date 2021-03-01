@@ -9,10 +9,10 @@ import { PartnumberObj } from './partnumberObj';
 })
 export class FullpartlistService {
 
-  private partmasterdataUrl = "http://localhost:4200/parts";  // URL to web api
+  private partList = "http://localhost:4200/parts";  // URL to web api
 
   constructor(private http:HttpClient) { }
   getPartsdata(): Observable<PartnumberObj[]>{
-    return this.http.get<PartnumberObj[]>(this.partmasterdataUrl)
+    return this.http.get<PartnumberObj[]>(this.partList)
   }
 }

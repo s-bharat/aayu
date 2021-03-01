@@ -1,0 +1,20 @@
+<p-table [value]="partNumberList">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Part Number</th>
+            <th>Part Name</th>
+            <th>Part Status</th>
+            <th>Version</th>
+            <th>Last Updated On</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-partNumberList>
+        <tr>
+            <td>{{partNumberList.partNumber}}</td>
+            <td>{{partNumberList.fullPartName}}</td>
+            <td>{{partNumberList.partStatus}}</td>
+            <td>{{partNumberList.version}}</td>
+            <td>{{partNumberList.lastUpdatedDate}}</td>
+        </tr>
+      </ng-template>
+  </p-table>

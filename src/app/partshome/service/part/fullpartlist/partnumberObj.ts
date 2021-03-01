@@ -1,6 +1,7 @@
 export interface PartnumberObj {
-  partPrefix :string;
-  vehicleType: string;
-  vehicleCode: string;
-  vehicleModule: string;
+  partNumber :string;
+  fullPartName: string;
+  version: string;
+  partStatus: string;
+  lastUpdatedDate:String;
   }

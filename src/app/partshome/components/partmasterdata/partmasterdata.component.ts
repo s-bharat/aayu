@@ -37,8 +37,11 @@ export class PartmasterdataComponent implements OnInit{
   partmasterdataFrontRear: PartmasterdataObj[];
   selectedPartmasterdataFrontRear: PartmasterdataObj;
 
-  partmasterdataPartName: string[];
+  partmasterdataPartName: string[]=[];
   selectedPartmasterdataPartName: string;
+
+  partmasterdataPartNameList: PartmasterdataObj[]; 
+  selectedPartmasterdataPartNameList: PartmasterdataObj[]; 
 
   constructor(private partmasterdataService: PartmasterdataService) { };
 
@@ -73,8 +76,16 @@ export class PartmasterdataComponent implements OnInit{
 
   }
   search(event) {
-//    this.mylookupservice.getResults(event.query).then(data => {this.results = data;
-          this.partmasterdataPartName=["Seat", "Lamp"];
-}
-
+    this.partmasterdataService.searchPartmasterdataPartName(event.query).subscribe(fetchedPartmasterdataPartNameList=>{
+      if(fetchedPartmasterdataPartNameList.length===0){
+        this.partmasterdataPartName=[event.query];
+      }else{
+        this.partmasterdataPartName=["Enter down Arrow Key to Search"];
+        for (let i = 0; i < fetchedPartmasterdataPartNameList.length; i++) {
+          this.partmasterdataPartName[i]=fetchedPartmasterdataPartNameList[i].partMasterDataTypeValue;
+        }
+      }
+    }
+    );
+  }
 }

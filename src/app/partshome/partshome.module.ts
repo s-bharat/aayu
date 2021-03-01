@@ -14,10 +14,11 @@ import { ParthistoryComponent } from './components/part/parthistory/parthistory.
 import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import { FullpartlistComponent } from './components/part/fullpartlist/fullpartlist.component';
+import { SearchresultComponent } from './components/part/searchresult/searchresult.component';
 
 @NgModule({
-  exports: [CreatepartComponent,PartmasterdataComponent,ParthistoryComponent,FullpartlistComponent],
-  declarations: [CreatepartComponent, PartmasterdataComponent, ParthistoryComponent,FullpartlistComponent ],
+  exports: [CreatepartComponent,PartmasterdataComponent,ParthistoryComponent,FullpartlistComponent,SearchresultComponent],
+  declarations: [CreatepartComponent, PartmasterdataComponent, ParthistoryComponent,FullpartlistComponent, SearchresultComponent ],
   imports: [
     CommonModule,
     ButtonModule,

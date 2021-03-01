@@ -4,7 +4,7 @@
 <div class="p-fluid p-grid">
     <div class="p-field p-col-12 p-md-4" width="300px">
         <span class="p-float-label" >
-          <p-autoComplete [style]="{'width':'350px', 'margin-top':'30px'}" [(ngModel)]="selectedPartmasterdataPartName" [suggestions]="partmasterdataPartName" (completeMethod)="search($event)"></p-autoComplete>
+          <p-autoComplete inputId="partName" [style]="{'width':'350px', 'margin-top':'30px'}" [(ngModel)]="selectedPartmasterdataPartName" [suggestions]="partmasterdataPartName" (completeMethod)="search($event)" minLength="1" autoHighlight="true"></p-autoComplete>
            <label for="mainpartname">Enter Part Name</label>
         </span>
     </div>

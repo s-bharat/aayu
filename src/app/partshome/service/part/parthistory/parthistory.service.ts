@@ -9,7 +9,7 @@ import { PartHistoryObj } from './parthistoryObj';
 })
 export class ParthistoryService {
 
-  private partHistoryUrl = "http://localhost:4200/partshistory";  // URL to web api
+  private partHistoryUrl = "http://localhost:4200/parts/history/AL101059365";  // URL to web api
 
   constructor(private http:HttpClient) { }
   getParthistory(): Observable<PartHistoryObj[]>{

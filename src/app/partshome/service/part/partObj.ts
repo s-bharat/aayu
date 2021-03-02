@@ -1,6 +1,7 @@
 export interface PartObj {
-  
-    id: string,
-    partname: string,
-    partnumber: string
+    partNumber :string;
+    fullPartName: string;
+    version: string;
+    partStatus: string;
+    lastUpdatedDate:String;
     }

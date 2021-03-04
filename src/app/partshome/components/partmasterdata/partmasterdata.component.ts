@@ -11,25 +11,10 @@ import {MessageService} from 'primeng/api';
 })
 
 export class PartmasterdataComponent implements OnInit{
-  userform: FormGroup;
+  createpartform: FormGroup;
     
   submitted: boolean;
-  
-  genders: SelectItem[];
-  
-  description: string;
-
-  brands: string[] = ['Audi','BMW','Fiat','Ford','Honda','Jaguar','Mercedes','Renault','Volvo','VW'];
-  
-  filteredBrands: any[];
-
-  cities = [
-      {name: 'New York', code: 'NY'},
-      {name: 'Rome', code: 'RM'},
-      {name: 'London', code: 'LDN'},
-      {name: 'Istanbul', code: 'IST'},
-      {name: 'Paris', code: 'PRS'}
-  ];
+      
   partmasterdataList: PartmasterdataObj[]; 
   selectedPartmasterdataList: PartmasterdataObj[]; 
 
@@ -68,7 +53,7 @@ export class PartmasterdataComponent implements OnInit{
 
   ngOnInit() {
     this.getPartmasterdataObj();
-            this.userform = this.fb.group({
+            this.createpartform = this.fb.group({
             'partName': new FormControl('',Validators.required),
             'prefix': new FormControl('',Validators.required),
             'VehicleType': new FormControl('',Validators.required),
@@ -120,20 +105,11 @@ export class PartmasterdataComponent implements OnInit{
     }
     );
   }
-  filterBrands(event) {
-    this.filteredBrands = [];
-    for(let i = 0; i < this.brands.length; i++) {
-        let brand = this.brands[i];
-        if (brand.toLowerCase().indexOf(event.query.toLowerCase()) == 0) {
-            this.filteredBrands.push(brand);
-        }
-    }
-}
 
 onSubmit(value: string) {
     this.submitted = true;
     //this.messageService.add({severity:'info', summary:'Success', detail:'Form Submitted', sticky: true});
 }
 
-get diagnostic() { return JSON.stringify(this.userform.value); }
+get diagnostic() { return JSON.stringify(this.createpartform.value); }
 }

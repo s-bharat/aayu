@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {PartmasterdataObj} from '../../service/partmasterdata/partmasterdataobj';
 import {PartmasterdataService} from '../../service/partmasterdata/partmasterdata.service';
-
+import {Validators,FormControl,FormGroup,FormBuilder} from '@angular/forms';
+import {SelectItem} from 'primeng/api';
+import {MessageService} from 'primeng/api';
 @Component({
   selector: 'app-partmasterdata',
   templateUrl: './partmasterdata.component.html',
@@ -9,7 +11,25 @@ import {PartmasterdataService} from '../../service/partmasterdata/partmasterdata
 })
 
 export class PartmasterdataComponent implements OnInit{
+  userform: FormGroup;
+    
+  submitted: boolean;
   
+  genders: SelectItem[];
+  
+  description: string;
+
+  brands: string[] = ['Audi','BMW','Fiat','Ford','Honda','Jaguar','Mercedes','Renault','Volvo','VW'];
+  
+  filteredBrands: any[];
+
+  cities = [
+      {name: 'New York', code: 'NY'},
+      {name: 'Rome', code: 'RM'},
+      {name: 'London', code: 'LDN'},
+      {name: 'Istanbul', code: 'IST'},
+      {name: 'Paris', code: 'PRS'}
+  ];
   partmasterdataList: PartmasterdataObj[]; 
   selectedPartmasterdataList: PartmasterdataObj[]; 
 
@@ -43,11 +63,23 @@ export class PartmasterdataComponent implements OnInit{
   partmasterdataPartNameList: PartmasterdataObj[]; 
   selectedPartmasterdataPartNameList: PartmasterdataObj[]; 
 
-  constructor(private partmasterdataService: PartmasterdataService) { };
+  constructor(private partmasterdataService: PartmasterdataService,private fb: FormBuilder) { };
 
 
   ngOnInit() {
     this.getPartmasterdataObj();
+            this.userform = this.fb.group({
+            'partName': new FormControl('',Validators.required),
+            'prefix': new FormControl('',Validators.required),
+            'VehicleType': new FormControl('',Validators.required),
+            'VehicleCode': new FormControl('',Validators.required),
+            'Module': new FormControl('',Validators.required),
+            'Assembly': new FormControl(''),
+            'FrontRear': new FormControl(''),
+            'UpDown': new FormControl(''),
+            'LeftRight': new FormControl(''),
+            //'lastname': new FormControl('', Validators.required),
+        });
   }
 
   getPartmasterdataObj(): void {
@@ -88,4 +120,20 @@ export class PartmasterdataComponent implements OnInit{
     }
     );
   }
+  filterBrands(event) {
+    this.filteredBrands = [];
+    for(let i = 0; i < this.brands.length; i++) {
+        let brand = this.brands[i];
+        if (brand.toLowerCase().indexOf(event.query.toLowerCase()) == 0) {
+            this.filteredBrands.push(brand);
+        }
+    }
+}
+
+onSubmit(value: string) {
+    this.submitted = true;
+    //this.messageService.add({severity:'info', summary:'Success', detail:'Form Submitted', sticky: true});
+}
+
+get diagnostic() { return JSON.stringify(this.userform.value); }
 }

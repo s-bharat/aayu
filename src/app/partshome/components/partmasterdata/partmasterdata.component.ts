@@ -88,4 +88,7 @@ export class PartmasterdataComponent implements OnInit{
     }
     );
   }
+  onSubmit(data){
+    console.warn(data);
+  }
 }

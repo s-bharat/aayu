@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FullpartlistService} from '../../../service/part/fullpartlist/fullpartlist.service';
-import  {PartObj} from '../../../service/part/partObj';
+import  {PartnumberObj} from '../../../service/part/fullpartlist/partnumberObj';
+
 @Component({
   selector: 'fullpartlist',
   templateUrl: './fullpartlist.component.html',
@@ -9,7 +10,8 @@ import  {PartObj} from '../../../service/part/partObj';
 export class FullpartlistComponent implements OnInit {
   constructor(private fullpartlistService: FullpartlistService) { };
 
-  partNumberList: PartObj[];
+  partNumberList: PartnumberObj[];
+
   ngOnInit() {
     this.getPartList();
     //this.parthistoryService.getParthistory().then(data => this.products = data);

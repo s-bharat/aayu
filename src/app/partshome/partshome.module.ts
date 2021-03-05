@@ -15,6 +15,8 @@ import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import { FullpartlistComponent } from './components/part/fullpartlist/fullpartlist.component';
 import { SearchresultComponent } from './components/part/searchresult/searchresult.component';
+import {PanelModule} from 'primeng/panel';
+import {Validators,FormControl,FormGroup,FormBuilder,ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   exports: [CreatepartComponent,PartmasterdataComponent,ParthistoryComponent,FullpartlistComponent,SearchresultComponent],
@@ -30,7 +32,9 @@ import { SearchresultComponent } from './components/part/searchresult/searchresu
     InputTextModule,
     TableModule,
     ScrollPanelModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    PanelModule,
+    ReactiveFormsModule
   ],
   providers: []
 

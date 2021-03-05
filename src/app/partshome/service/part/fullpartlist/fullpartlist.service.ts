@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { PartnumberdataObj } from '../partnumberfieldsObj';
+import { PartnumberObj } from './partnumberObj';
 
 
 @Injectable({
@@ -13,8 +13,8 @@ export class FullpartlistService {
 
   constructor(private http:HttpClient) { }
 
-  getPartsdata(): Observable<PartnumberdataObj []>{
-    return this.http.get<PartnumberdataObj[]>(this.partList)
+  getPartsdata(): Observable<PartnumberObj[]>{
+    return this.http.get<PartnumberObj[]>(this.partList)
 
   }
 }

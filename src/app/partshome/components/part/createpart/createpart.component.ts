@@ -7,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatepartComponent implements OnInit {
 
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+
   }
+  
+    
 }

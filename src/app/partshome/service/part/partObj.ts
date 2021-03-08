@@ -6,7 +6,10 @@ export interface PartObj {
     partStatus: string,
     createdDate: string,
     lastUpdatedDate: string,
-    firstName: String ,
-    userId: String,
-    lastName: String
+    user
+    firstName: string ,
+    lastName: string,
+    email: string,
+    userID: string
+
 }

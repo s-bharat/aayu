@@ -1,6 +1,6 @@
 export interface userObj {
   
-    userId: string,
+    userID: string,
     firstName: string,
     lastName: string,
     email: string

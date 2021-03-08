@@ -9,7 +9,7 @@ import { PartObj } from '../../service/part/partObj';
 })
 export class PartdetailService {  
 
-  private partsdataUrl = "http://localhost:4200/parts/byPartNumber/AL101050809";  // URL to web api
+  private partsdataUrl = "http://localhost:4200/parts/byPartNumber/AL101059365";  // URL to web api
 
   constructor(private http:HttpClient) { }
 

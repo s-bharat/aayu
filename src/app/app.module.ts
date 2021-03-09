@@ -7,6 +7,7 @@ import {PanelModule} from 'primeng/panel';
 import {TabViewModule} from 'primeng/tabview';
 import {SplitterModule} from 'primeng/splitter';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
+import { AppRoutingModule } from '../app/app-routing/app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import {ScrollPanelModule} from 'primeng/scrollpanel';
     PanelModule,
     TabViewModule,
     SplitterModule,
-    ScrollPanelModule
+    ScrollPanelModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

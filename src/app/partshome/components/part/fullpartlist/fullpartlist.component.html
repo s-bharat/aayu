@@ -10,7 +10,7 @@
   </ng-template>
   <ng-template pTemplate="body" let-partNumberList>
       <tr>
-          <td>{{partNumberList.partNumber}}</td>
+          <td><a routerLink="partdetails">{{partNumberList.partNumber}}</a></td>
           <td>{{partNumberList.fullPartName}}</td>
           <td>{{partNumberList.partStatus}}</td>
           <td>{{partNumberList.version}}</td>
@@ -18,3 +18,5 @@
       </tr>
     </ng-template>
 </p-table>
+
+<router-outlet></router-outlet>

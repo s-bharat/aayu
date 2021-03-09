@@ -18,7 +18,7 @@ import { SearchresultComponent } from './components/part/searchresult/searchresu
 import {PanelModule} from 'primeng/panel';
 import {Validators,FormControl,FormGroup,FormBuilder,ReactiveFormsModule} from '@angular/forms';
 import { PartdetailsComponent } from './components/part/partdetails/partdetails.component';
-
+import { AppRoutingModule } from '../app-routing/app-routing.module';
 
 @NgModule({
   exports: [CreatepartComponent,PartmasterdataComponent,ParthistoryComponent,FullpartlistComponent,SearchresultComponent,PartdetailsComponent],
@@ -36,7 +36,8 @@ import { PartdetailsComponent } from './components/part/partdetails/partdetails.
     ScrollPanelModule,
     AutoCompleteModule,
     PanelModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule 
   ],
   providers: []
 

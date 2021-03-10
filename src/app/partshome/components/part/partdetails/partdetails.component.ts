@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { PartObj } from '../../../service/part/partObj';
 import { PartdetailService } from '../../../service/partdetails/partdetail.service';
 @Component({
@@ -8,19 +9,20 @@ import { PartdetailService } from '../../../service/partdetails/partdetail.servi
 })
 export class PartdetailsComponent implements OnInit {
 
-  constructor(private partdetailService: PartdetailService) { };
+  constructor(private partdetailService: PartdetailService, private route: ActivatedRoute,) { }
 
   partsData: PartObj;
 
   ngOnInit() {
-    this.getPartsData();
+    const partnumber = +this.route.snapshot.paramMap.get('partNumber');
+    this.getPartsData(partnumber);
     }
-    getPartsData(){
-      this.partdetailService.getPartdata().subscribe(fetchedpartsData=>{
+    getPartsData(partnumber){
+      this.partdetailService.getPartdata(partnumber).subscribe(fetchedpartsData=>{
         this.partsData=fetchedpartsData
       console.warn(this.partsData)
       });
-      return this.partdetailService.getPartdata().subscribe(fetchedpartsData=>{this.partsData=fetchedpartsData});
+      return this.partdetailService.getPartdata(partnumber).subscribe(fetchedpartsData=>{this.partsData=fetchedpartsData});
 
     }
 

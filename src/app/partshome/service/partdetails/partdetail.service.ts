@@ -9,11 +9,14 @@ import { PartObj } from '../../service/part/partObj';
 })
 export class PartdetailService {  
 
-  private partsdataUrl = "http://localhost:4200/parts/byPartNumber/AL101059365";  // URL to web api
+  private partsdataUrl = "http://localhost:4200/parts/byPartNumber";  // URL to web api
 
   constructor(private http:HttpClient) { }
 
-  getPartdata():Observable<PartObj>{
-    return this.http.get<PartObj>(this.partsdataUrl);
+  getPartdata(partnumber):Observable<PartObj>
+  {
+    const Url=`${this.partsdataUrl}/${partnumber}`;
+    return this.http.get<PartObj>(Url);
+    
   }
 }

@@ -10,7 +10,7 @@ import  {PartnumberObj} from '../../../service/part/fullpartlist/partnumberObj';
 export class FullpartlistComponent implements OnInit {
   constructor(private fullpartlistService: FullpartlistService) { };
 
-  partNumberList: PartnumberObj[];
+  partNumberList: PartnumberObj[]=[];
 
   ngOnInit() {
     this.getPartList();

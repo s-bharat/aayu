@@ -8,25 +8,24 @@ import { PartdetailService } from '../../../service/partdetails/partdetail.servi
   styleUrls: ['./partdetails.component.css']
 })
 export class PartdetailsComponent implements OnInit {
-
+  partsData: PartObj;
+  
   constructor(private partdetailService: PartdetailService, private route: ActivatedRoute,) { }
 
-  partsData: PartObj;
-
-  ngOnInit() {
-    const partnumber = +this.route.snapshot.paramMap.get('partNumber');
-    this.getPartsData(partnumber);
+  ngOnInit():void {
+    this.getPartsData();
     }
-    getPartsData(partnumber){
-      this.partdetailService.getPartdata(partnumber).subscribe(fetchedpartsData=>{
-        this.partsData=fetchedpartsData
+    getPartsData(): void{
+      const partnumber = +this.route.snapshot.paramMap.get('partNumber');
+      this.partdetailService.getPartdata(partnumber).subscribe(fetchedData=>{
+        this.partsData=fetchedData
       console.warn(this.partsData)
       });
-      return this.partdetailService.getPartdata(partnumber).subscribe(fetchedpartsData=>{this.partsData=fetchedpartsData});
+      
 
-    }
+    
 
 
   }
 
-
+}

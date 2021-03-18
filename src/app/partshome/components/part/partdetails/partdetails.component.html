@@ -1,5 +1,19 @@
+{{partsData|json}}
+<table class="table table borderd">
+    <thead>
+    <tr>
+        <td>Part Number</td>
+          <td>Part Name</td>
+          <td>fullpart Name</td>
+    </tr>
+    </thead>
+    <tr>
+        <td>{{partsData.partName}}</td>
+        <td>{{partsData.partNumber}}</td>
+        <td>{{partsData.fullPartName}}</td>
+    </tr></table>
 
-<div class="p-grid"  *ngIf="partsData">
+<!---div class="p-grid" >
     <div class="p-col-partsData">{{partsData.partNumber}}</div>
     <div class="p-col">{{partsData.partName}} </div>
     <div class="p-col">{{partsData.fullPartName}} </div>
@@ -11,5 +25,5 @@
     <div class="p-col">{{partsData.user.email}}</div>
     <div class="p-col">{{partsData.user.userID}}</div>
 </div>
-
+-->
   

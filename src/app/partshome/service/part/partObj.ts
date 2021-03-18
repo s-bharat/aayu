@@ -1,5 +1,6 @@
 import { userObj } from './userObj';
 export interface PartObj {
+    id:number,
     partName: string,
     fullPartName: string,
     partNumber:string,

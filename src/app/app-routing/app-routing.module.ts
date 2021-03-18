@@ -10,7 +10,7 @@ const routes: Routes=[
   component: FullpartlistComponent
 },
 {
-  path: 'partdetails/:partNumber',
+  path: 'partdetails/:id',
   component: PartdetailsComponent
 
 }]

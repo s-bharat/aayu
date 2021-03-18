@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PartObj } from '../../../service/part/partObj';
 import { PartdetailService } from '../../../service/partdetails/partdetail.service';
 @Component({
   selector: 'partdetails',
@@ -8,24 +7,27 @@ import { PartdetailService } from '../../../service/partdetails/partdetail.servi
   styleUrls: ['./partdetails.component.css']
 })
 export class PartdetailsComponent implements OnInit {
-  partsData: PartObj;
+  partsData: any;
+  
   
   constructor(private partdetailService: PartdetailService, private route: ActivatedRoute,) { }
 
-  ngOnInit():void {
-    this.getPartsData();
-    }
-    getPartsData(): void{
-      const partnumber = +this.route.snapshot.paramMap.get('partNumber');
-      this.partdetailService.getPartdata(partnumber).subscribe(fetchedData=>{
-        this.partsData=fetchedData
-      console.warn(this.partsData)
+  ngOnInit() {
+    let partnumber= this.route.snapshot.params['id'];
+   this.partdetailService.getPartData(partnumber).subscribe(d=>
+      {console.log(d);
+        this.partsData=d
       });
+    }
+
+   
+      }
+    
+    
       
 
     
 
 
-  }
+  
 
-}

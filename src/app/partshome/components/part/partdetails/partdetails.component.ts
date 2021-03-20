@@ -13,7 +13,7 @@ export class PartdetailsComponent implements OnInit {
   constructor(private partdetailService: PartdetailService, private route: ActivatedRoute,) { }
 
   ngOnInit() {
-    let partnumber= this.route.snapshot.params['id'];
+    let partnumber= this.route.snapshot.params['partNumber'];
    this.partdetailService.getPartData(partnumber).subscribe(d=>
       {console.log(d);
         this.partsData=d

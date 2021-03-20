@@ -9,8 +9,8 @@ export class PartdetailService {
 
   constructor(private http:HttpClient) { }
  
-  getPartData(id:string)
+  getPartData(partNumber:string)
   {
-    return this.http.get("http://localhost:4200/parts/" +id)
+    return this.http.get("http://localhost:4200/parts/bypartNumber")
   }
 }

@@ -17,11 +17,11 @@ import { FullpartlistComponent } from './components/fullpartlist/fullpartlist.co
 import { SearchresultComponent } from './components/searchresult/searchresult.component';
 import {PanelModule} from 'primeng/panel';
 import {Validators,FormControl,FormGroup,FormBuilder,ReactiveFormsModule} from '@angular/forms';
-import { PartdetailsComponent } from './components/partdetails/partdetails.component';
+import { PartdetailComponent } from './components/partdetail/partdetail.component';
 
 @NgModule({
-  exports: [CreatepartComponent,PartmasterdataComponent,ParthistoryComponent,FullpartlistComponent,SearchresultComponent,PartdetailsComponent],
-  declarations: [CreatepartComponent, PartmasterdataComponent, ParthistoryComponent,FullpartlistComponent, SearchresultComponent, PartdetailsComponent],
+  exports: [CreatepartComponent,PartmasterdataComponent,ParthistoryComponent,FullpartlistComponent,SearchresultComponent,PartdetailComponent],
+  declarations: [CreatepartComponent, PartmasterdataComponent, ParthistoryComponent,FullpartlistComponent, SearchresultComponent, PartdetailComponent],
   imports: [
     CommonModule,
     ButtonModule,

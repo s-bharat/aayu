@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PartdetailService } from '../../../service/partdetails/partdetail.service';
+import { PartdetailService } from '../../service/partdetails/partdetail.service';
 @Component({
   selector: 'partdetails',
   templateUrl: './partdetails.component.html',

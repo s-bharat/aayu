@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { PartHistoryObj } from './parthistoryObj';
+import { PartHistoryObj } from '../../objects/parthistoryobj';
 
 
 @Injectable({

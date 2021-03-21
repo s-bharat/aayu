@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ParthistoryService} from '../../../service/part/parthistory/parthistory.service'
-import {PartHistoryObj} from '../../../service/part/parthistory/parthistoryObj';
+import {ParthistoryService} from '../../service/parthistory/parthistory.service'
+import {PartHistoryObj} from '../../objects/parthistoryobj';
 
 @Component({
   selector: 'parthistory',

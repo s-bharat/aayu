@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {PartmasterdataObj} from './partmasterdataobj';
+import {PartmasterdataObj} from '../../objects/partmasterdataobj';
 import { Observable, of } from 'rxjs';
 
 @Injectable({

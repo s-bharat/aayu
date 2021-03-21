@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PartmasterdataObj} from '../../service/partmasterdata/partmasterdataobj';
+import {PartmasterdataObj} from '../../objects/partmasterdataobj';
 import {PartmasterdataService} from '../../service/partmasterdata/partmasterdata.service';
 import {Validators,FormControl,FormGroup,FormBuilder} from '@angular/forms';
 import {SelectItem} from 'primeng/api';

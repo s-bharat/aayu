@@ -1,4 +1,4 @@
-import { userObj } from "../userObj";
+import { userObj } from "./userObj";
 
 export interface PartHistoryObj {
   

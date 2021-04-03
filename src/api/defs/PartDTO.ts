@@ -18,8 +18,8 @@ export interface PartDTO {
   id?: string;
   partName?: string;
   partNumber?: string;
-  partNumberFields?: __model.PartNumberFields;
-  partNameFields?: __model.PartNameFields;
+  PartNumberFields?: __model.PartNumberFields;
+  PartNameFields?: __model.PartNameFields;
   partStatus?: string;
   /** format: date-time */
   createdDate?: string;

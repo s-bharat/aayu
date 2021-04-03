@@ -179,10 +179,10 @@
         "partNumber" : {
           "type" : "string"
         },
-        "partNumberFields" : {
+        "PartNumberFields" : {
           "$ref" : "#/definitions/PartNumberFields"
         },
-        "partNameFields" : {
+        "PartNameFields" : {
           "$ref" : "#/definitions/PartNameFields"
         },
         "partStatus" : {

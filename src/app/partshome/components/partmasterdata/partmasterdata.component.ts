@@ -5,6 +5,10 @@ import {CreatepartService} from '../../service/createpart/createpart.service';
 import {Validators,FormControl,FormGroup,FormBuilder} from '@angular/forms';
 import {SelectItem} from 'primeng/api';
 import {MessageService} from 'primeng/api';
+import { PartObj } from '../../objects/partObj';
+import { PartNumberFields } from '../../objects/partNumberFields';
+import { PartNameFields } from '../../objects/partNameFields';
+import { userObj } from '../../objects/userObj';
 @Component({
   selector: 'app-partmasterdata',
   templateUrl: './partmasterdata.component.html',
@@ -49,6 +53,10 @@ export class PartmasterdataComponent implements OnInit{
   partmasterdataPartNameList: PartmasterdataObj[]; 
   selectedPartmasterdataPartNameList: PartmasterdataObj[]; 
 
+  partObj: PartObj =<PartObj>{};
+  partNumberFields: PartNumberFields =<PartNumberFields>{};
+  partnamefieldsObj: PartNameFields= <PartNameFields>{};
+  userObj: userObj=<userObj>{};
 
   constructor(private partmasterdataService: PartmasterdataService, private createPartService: CreatepartService, private fb: FormBuilder) { };
 
@@ -109,10 +117,33 @@ export class PartmasterdataComponent implements OnInit{
 onSubmit(value: string) {
     this.submitted = true;
     //this.messageService.add({severity:'info', summary:'Success', detail:'Form Submitted', sticky: true});
+    this.partObj.partName =this.createpartform.value.partName;
+    
+    this.partObj.partNumberFields=this.partNumberFields;
+    this.partObj.partNumberFields.partPrefix=this.createpartform.value.prefix.partMasterDataTypeCode;
+    this.partObj.partNumberFields.vehicleType=this.createpartform.value.VehicleType.partMasterDataTypeCode;
+    this.partObj.partNumberFields.vehicleCode=this.createpartform.value.VehicleCode.partMasterDataTypeCode;
+    this.partObj.partNumberFields.vehicleModule=this.createpartform.value.Module.partMasterDataTypeCode;
+    
+    this.partObj.partNameFields=this.partnamefieldsObj;
+    this.partObj.partNameFields.assembly=this.createpartform.value.Assembly.partMasterDataTypeCode;
+    this.partObj.partNameFields.frontRear=this.createpartform.value.FrontRear.partMasterDataTypeCode;
+    this.partObj.partNameFields.upDown=this.createpartform.value.UpDown.partMasterDataTypeCode;
+    this.partObj.partNameFields.leftRight=this.createpartform.value.LeftRight.partMasterDataTypeCode;
+    
+    this.partObj.userObj=this.userObj;
+    this.partObj.userObj.userId="HEMSONI";
+    this.partObj.userObj.firstName="Hemant";
+    this.partObj.userObj.lastName="Soni";
+    this.partObj.userObj.email="hemant.soni@pm.me";
 
-    this.createPartService.createPart();
+
+
+
+    this.createPartService.createPart(this.partObj);
+    //this.createPartService.createPart();
 }
 
-get diagnostic() { return JSON.stringify(this.createpartform.value); }
+//get diagnostic() { return JSON.stringify(this.createpartform.value); }
 
 }

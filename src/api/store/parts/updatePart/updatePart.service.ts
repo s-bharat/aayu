@@ -27,13 +27,13 @@ export class UpdatePartFormService {
         id: new FormControl(undefined, []),
         partName: new FormControl(undefined, []),
         partNumber: new FormControl(undefined, []),
-        partNumberFields: new FormGroup({
+        PartNumberFields: new FormGroup({
           partPartmasterdata: new FormControl(undefined, []),
           vehicleType: new FormControl(undefined, []),
           vehicleCode: new FormControl(undefined, []),
           vehicleModule: new FormControl(undefined, []),
         }, []),
-        partNameFields: new FormGroup({
+        PartNameFields: new FormGroup({
           inputField1: new FormControl(undefined, []),
           inputField2: new FormControl(undefined, []),
           inputField3: new FormControl(undefined, []),

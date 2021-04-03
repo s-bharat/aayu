@@ -16,7 +16,7 @@ export class PartdetailComponent implements OnInit {
   }
 
   getPartdetail() {
-    this.partdetailService.getPartdetail().subscribe(fetchedPartmasterdataList=>{console.log("Test1:", fetchedPartmasterdataList);this.partdetail=fetchedPartmasterdataList});
+//    this.partdetailService.getPartdetail().subscribe(fetchedPartmasterdataList=>{console.log("Test1:", fetchedPartmasterdataList);this.partdetail=fetchedPartmasterdataList});
     return this.partdetailService.getPartdetail().subscribe(fetchedPartHistory=>{this.partdetail=fetchedPartHistory});
 
   }

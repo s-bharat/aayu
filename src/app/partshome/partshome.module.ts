@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { CreatepartComponent } from './components/createpart/createpart.component';
 import {ButtonModule} from 'primeng/button';
 import {DropdownModule} from 'primeng/dropdown';
-import {PartmasterdataComponent } from './components/partmasterdata/partmasterdata.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,8 +19,8 @@ import {Validators,FormControl,FormGroup,FormBuilder,ReactiveFormsModule} from '
 import { PartdetailComponent } from './components/partdetail/partdetail.component';
 
 @NgModule({
-  exports: [CreatepartComponent,PartmasterdataComponent,ParthistoryComponent,FullpartlistComponent,SearchresultComponent,PartdetailComponent],
-  declarations: [CreatepartComponent, PartmasterdataComponent, ParthistoryComponent,FullpartlistComponent, SearchresultComponent, PartdetailComponent],
+  exports: [CreatepartComponent,ParthistoryComponent,FullpartlistComponent,SearchresultComponent,PartdetailComponent],
+  declarations: [CreatepartComponent, ParthistoryComponent,FullpartlistComponent, SearchresultComponent, PartdetailComponent],
   imports: [
     CommonModule,
     ButtonModule,

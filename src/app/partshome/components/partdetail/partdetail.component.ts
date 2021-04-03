@@ -9,7 +9,7 @@ import {PartObj} from '../../objects/partObj';
 export class PartdetailComponent implements OnInit {
 
   constructor(private partdetailService: PartdetailService) { }
-  partdetail: PartObj;
+  partdetail: PartObj=<PartObj>{};
 
   ngOnInit(): void {
     this.getPartdetail();

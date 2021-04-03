@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PartmasterdataObj} from '../../objects/partmasterdataobj';
 import {PartmasterdataService} from '../../service/partmasterdata/partmasterdata.service';
+import {CreatepartService} from '../../service/createpart/createpart.service';
 import {Validators,FormControl,FormGroup,FormBuilder} from '@angular/forms';
 import {SelectItem} from 'primeng/api';
 import {MessageService} from 'primeng/api';
@@ -49,7 +50,7 @@ export class PartmasterdataComponent implements OnInit{
   selectedPartmasterdataPartNameList: PartmasterdataObj[]; 
 
 
-  constructor(private partmasterdataService: PartmasterdataService,private fb: FormBuilder) { };
+  constructor(private partmasterdataService: PartmasterdataService, private createPartService: CreatepartService, private fb: FormBuilder) { };
 
   ngOnInit() {
     this.getPartmasterdataObj();
@@ -108,6 +109,8 @@ export class PartmasterdataComponent implements OnInit{
 onSubmit(value: string) {
     this.submitted = true;
     //this.messageService.add({severity:'info', summary:'Success', detail:'Form Submitted', sticky: true});
+
+    this.createPartService.createPart();
 }
 
 get diagnostic() { return JSON.stringify(this.createpartform.value); }

@@ -1,13 +1,13 @@
 <div>
     <form [formGroup]="createpartform" (ngSubmit)="onSubmit(createpartform.value)">
             <div class="ui-fluid forms-grid p-fluid p-grid" style="margin: 1em 0">
-                <div class="p-field p-col-12 p-md-5" width="300px">
+                <div class="p-field p-col-12 p-md-5" width="350px">
                     <span class="p-float-label" >
                         <p-autoComplete formControlName="partName" inputId="partName" [style]="{'width':'350px', 'margin-top':'30px'}" [(ngModel)]="selectedPartmasterdataPartName" [suggestions]="partmasterdataPartName" (completeMethod)="search($event)" minLength="1" autoHighlight="true"></p-autoComplete>
                         <label for="mainpartname">Enter Part Name*</label>
                     </span>
                 </div>
-                <div class="p-field p-col-12 p-md-5" width="300px">
+                <div class="p-field p-col-12 p-md-5" width="350px">
                     <span class="p-float-label" >
                         <p-dropdown formControlName="prefix" [style]="{'width':'350px', 'margin-top':'30px'}" inputId="prefix" [filter]="true" [autoDisplayFirst]="false" [options]="partmasterdataPrefixes" [(ngModel)]="selectedPartmasterdataPrefixes" optionLabel="partMasterDataTypeValue"></p-dropdown>
                         <label for="prefix">Select Prefix*</label>
